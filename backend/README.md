@@ -1,11 +1,26 @@
 
 # 🛠️ Backend Setup Guide (with Poetry)
 
+> **📁 Note:** All the following steps should be run inside the `/backend` directory of the project.
+
 ## ✅ Prerequisites
 
 - Python 3.11+ installed
 
 ---
+
+## 📄 Environment Setup
+
+We use environment variables to manage secrets securely.
+
+1. Duplicate the example file:
+    ```bash
+    cp .env.example .env
+    ```
+
+2. Open `.env` and update values like `SECRET_KEY`, `DEBUG`, and `DATABASE_URL`.
+
+> ⚠️ Never commit your `.env` file. It's already listed in `.gitignore`.
 
 ## 📦 Step 1: Install Poetry
 
