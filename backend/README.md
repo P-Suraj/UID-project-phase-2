@@ -68,6 +68,13 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+```bash
+# Create a Django superuser (admin)
+python manage.py createsuperuser
+```
+
+After creating the superuser, open your browser and go to [http://localhost:8000/admin](http://localhost:8000/admin) to log in to the Django admin panel.
+
 ---
 
 ## ✅ Optional: Add Dependencies Later
@@ -79,7 +86,7 @@ poetry add <package-name>
 ```
 
 For dev-only packages:
-(packages only developers use - not in production)
+(packages only developers use  --not in production)
 
 ```bash
 poetry add --dev <package-name>
