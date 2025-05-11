@@ -1,0 +1,27 @@
+[project]
+name = "serve-eaze"
+version = "0.1.0"
+description = "A backend service for managing services, subservices, and customer orders, built with Django and Strawberry GraphQL to provide a seamless API for querying and managing data."
+authors = [
+    {name = "Aadidev",email = "aadidev1006@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "django (>=5.2.1,<6.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "python-dateutil (>=2.9.0.post0,<3.0.0)",
+    "python-dotenv (>=1.1.0,<2.0.0)",
+    "strawberry-graphql @ git+https://github.com/strawberry-graphql/strawberry.git"
+]
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.9"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

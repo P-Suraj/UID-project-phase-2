@@ -1,1 +1,101 @@
-# UID-project-phase-2
+
+# 🛠️ Backend Setup Guide (with Poetry)
+
+## ✅ Prerequisites
+
+- Python 3.11+ installed
+
+---
+
+## 📦 Step 1: Install Poetry
+
+Run this command in your terminal:
+
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+```
+
+After install:
+
+> 🔁 Restart your terminal.
+
+
+Check if Poetry is installed:
+
+```bash
+poetry --version
+```
+
+---
+
+
+## 🧪 Step 3: Install Dependencies
+
+Poetry will automatically create a virtual environment and install everything:
+
+```bash
+poetry install
+```
+
+---
+
+## 🧬 Step 4: Activate the Virtual Environment
+
+### Option 1 (Preferred):
+
+Go to `/backend` folder
+
+```bash
+source .venv/bin/activate
+```
+
+### Option 2 (Optional):
+If you'd rather use `poetry shell` like older versions, install the plugin:
+```bash
+poetry self add poetry-plugin-shell
+poetry shell
+```
+
+---
+
+## 🛠️ Step 5: Run Django Commands
+
+After activation, you can run commands like:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+---
+
+## ✅ Optional: Add Dependencies Later
+
+To install a new package:
+
+```bash
+poetry add <package-name>
+```
+
+For dev-only packages:
+(packages only developers use - not in production)
+
+```bash
+poetry add --dev <package-name>
+```
+
+---
+
+## ❌ To Exit the Virtual Environment
+
+```bash
+deactivate
+```
+
+---
+
+## 🔁 Troubleshooting
+
+- If `poetry install` fails, try running `poetry env use python3` first.
+- If you get permission errors, run with `python3` instead of `python`.
