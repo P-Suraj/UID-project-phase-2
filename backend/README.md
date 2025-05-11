@@ -35,6 +35,9 @@ After install:
 > 🔁 Restart your terminal.
 
 
+
+> ✅ Instead of using `pip` or `pipx`, we use **Poetry** because it offers better dependency management, built-in virtual environments, and reproducible installs via `poetry.lock`.
+
 Check if Poetry is installed:
 
 ```bash
