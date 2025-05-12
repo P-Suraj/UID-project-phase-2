@@ -1,6 +1,6 @@
 import strawberry
 from typing import List, Optional
-from .models import Service, SubService, Order
+from .models import Service, SubService, Order, OrderItem
 from django.contrib.auth.models import User
 
 
@@ -20,13 +20,24 @@ class SubServiceType:
 
 
 @strawberry.type
+class OrderItemType:
+    id: int
+    subservice: SubServiceType
+    total_cost: float
+
+
+@strawberry.type
 class OrderType:
     id: int
     customer_email: str
     customer_phone: str
     customer_address: str
     order_date: str
-    subservice: SubServiceType
+    items: List[OrderItemType]
+
+    @strawberry.field
+    def total_cost(self) -> float:
+        return self.total_cost
 
 
 # Queries
@@ -66,15 +77,16 @@ class Mutation:
         customer_email: str,
         customer_phone: str,
         customer_address: str,
-        subservice_id: int,
+        subservice_ids: List[int],
     ) -> OrderType:
-        subservice = SubService.objects.get(pk=subservice_id)
         order = Order.objects.create(
             customer_email=customer_email,
             customer_phone=customer_phone,
             customer_address=customer_address,
-            subservice=subservice,
         )
+        for sid in subservice_ids:
+            sub = SubService.objects.get(pk=sid)
+            OrderItem.objects.create(order=order, subservice=sub)
         return order
 
     @strawberry.mutation
