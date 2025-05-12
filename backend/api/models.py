@@ -23,11 +23,26 @@ class SubService(models.Model):
 
 class Order(models.Model):
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
-    subservice = models.ForeignKey(SubService, on_delete=models.CASCADE)
     customer_email = models.EmailField()
     customer_phone = models.CharField(max_length=10)
     customer_address = models.TextField()
     order_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Order {self.id} - {self.customer_name}"
+        return f"Order {self.id} - {self.customer.username}"
+
+    @property
+    def total_cost(self):
+        return sum(item.total_cost for item in self.items.all())
+
+
+class OrderItem(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="items")
+    subservice = models.ForeignKey(SubService, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.subservice.name} in Order {self.order.id}"
+
+    @property
+    def total_cost(self):
+        return (self.subservice.amount or 0) + (self.subservice.labor_rate or 0)
