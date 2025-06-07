@@ -1,0 +1,46 @@
+service_id,category,service,description,image_url,price
+1,Men,Classic Haircut,"A timeless haircut tailored to your preference, including a wash and dry.",images/services/classic_haircut_men.jpg,300
+2,Men,Beard Trim & Style,"Professional trimming, shaping, and styling of your beard and moustache.",images/services/beard_trim_and_style_men.jpg,200
+3,Men,Royal Shave,A traditional hot towel shave with premium foam and a post-shave balm.,images/services/royal_shave_men.jpg,250
+4,Men,Hair Color (Ammonia-Free),Natural-looking hair color to cover greys or try a new look.,images/services/hair_colour_(ammonia-free).jpg,700
+5,Men,Head & Shoulder Massage,"A relaxing 20-minute massage focusing on the head, neck, and shoulders.",images/services/head_and_shoulder_massage_men.jpg,400
+6,Men,Power Glow Facial,A deep cleansing facial designed for men's skin to remove impurities and tan.,images/services/power_glow_facial_men.webp,800
+7,Men,Express Pedicure,"A quick cleanup, nail trimming, and buffing for well-groomed feet.",images/services/express_pedicure_men.jpg,350
+8,Men,Express Manicure,"A quick cleanup, nail trimming, and buffing for clean and neat hands.",images/services/express_manicure_men.jpg,300
+9,Men,Hair Styling,"Professional hair styling using gel, wax, or spray for a special occasion.",images/services/hair_styling_men.jpg,250
+10,Men,Anti-Dandruff Treatment,A specialized scalp treatment to combat dandruff and soothe the scalp.,images/services/anti-dandruff_treatment_men.jpg,600
+11,Men,Sports Pedicure,An intensive pedicure focused on relieving tired feet and calluses.,images/services/sports_pedicure_men.jpg,500
+12,Men,Grey Blending,A subtle coloring service to blend grey hair naturally with your original hair color.,images/services/grey_blending_men.webp,650
+13,Men,Face & Neck De-Tan,A pack to remove tanning and even out the skin tone on the face and neck.,images/services/face_and_neck_de-tan_men.png,400
+14,Men,Men's Hair Spa,A conditioning treatment to strengthen hair and combat dryness.,images/services/mens's_hair_spa.jpg,900
+15,Men,Back Cleansing,"A treatment to deep clean the back, remove blackheads and leave skin smooth.",images/services/back_cleansing_men.jpg,700
+16,Women,Layered Haircut,A stylish haircut that gives the illusion of length and volume. Includes wash and dry.,images/services/layered_haircut_women.webp,500
+17,Women,Global Hair Color,A single shade of color applied evenly from roots to tips for a uniform look.,images/services/global_hair_color_women.jpg,1500
+18,Women,Balayage Highlights,"A freehand painting technique for soft, natural-looking highlights.",images/services/balayage_highlights_women.jpg,2500
+19,Women,Keratin Treatment,"A semi-permanent treatment to straighten hair, reduce frizz, and add shine.",images/services/keratin_treatment_women.webp,3500
+20,Women,Gel Manicure,A long-lasting manicure with gel polish that cures under a UV lamp.,images/services/gel_manicure_women.jpg,800
+21,Women,Luxury Spa Pedicure,"An indulgent pedicure with exfoliation, mask, massage, and polish.",images/services/luxury_spa_pedicure_women.png,1200
+22,Women,Gold Radiance Facial,A luxurious facial using gold-infused products for a radiant glow.,images/services/gold_radiance_facial_women.jpg,2000
+23,Women,Full Body Waxing (Rica),"Gentle and effective hair removal for arms, legs, and underarms using Rica wax.",images/services/full_body_waxing_(rica).jpeg,1800
+24,Women,Eyebrow Threading & Tint,"Shaping the eyebrows using thread, followed by tinting for definition.",images/services/eyebrow_threading_and_tint_women.jpg,300
+25,Women,Body Polishing,An exfoliating treatment for the entire body to leave skin soft and smooth.,images/services/body_polishing_women.jpg,1500
+26,Women,Bridal Makeup Package,"A complete makeup package for the bride, including consultation and trial.",images/services/bridal_makeup_package_women.jpg,8000
+27,Women,Party Makeup,Professional makeup application for any special occasion or event.,images/services/party_makeup_women.jpg,2500
+28,Women,Saree Draping,Expert draping of a saree in a style of your choice.,images/services/saree_draping_women.webp,400
+29,Women,O3+ Whitening Facial,"A specialized facial to brighten the skin, reduce tan, and even out skin tone.",images/services/o3+_whitening_facial_women.png,1800
+30,Women,Nail Art (Per Nail),Creative and intricate designs painted on your nails by a professional artist.,images/services/nail_art_(per_nail).jpg,100
+31,Unisex,Deep Tissue Massage,An intense massage targeting deeper layers of muscle to relieve chronic pain.,images/services/deep_tissue_massage_unisex.jpg,1800
+32,Unisex,Aromatherapy Massage,A gentle massage using essential oils to promote relaxation and well-being.,images/services/aromatherapy_massage_unisex.jpg,1600
+33,Unisex,Hot Stone Massage,A therapeutic massage where heated stones are placed on the body to ease tension.,images/services/hot_stone_massage_unisex.jpg,2000
+34,Unisex,Full Body Scrub,"An exfoliating scrub to remove dead skin cells, leaving the body smooth and soft.",images/services/full_body_scrub_unisex.jpg,1500
+35,Unisex,Hydrating Facial,A moisturizing facial suitable for all skin types to restore hydration and glow.,images/services/hydrating_facial_unisex.jpg,1200
+36,Unisex,Indian Head Massage,"A traditional, invigorating massage of the scalp, neck, and shoulders.",images/services/indian_head_massage_unisex.jpg,700
+37,Unisex,Foot Reflexology,An acupressure massage on the feet to stimulate nerve endings and relax the body.,images/services/foot_reflexology_unisex.jpg,900
+38,Unisex,Hair Wash & Blast Dry,"A simple and quick hair wash with conditioner, followed by a rough dry.",images/services/hair_wash_and_blast_dry_unisex.webp,300
+39,Unisex,Face Cleanup,"A basic cleansing routine to remove blackheads, whiteheads, and impurities.",images/services/face_cleanup_unisex.webp,600
+40,Unisex,De-Tan Pack (Face),Application of a specialized pack to remove sun tan and brighten the face.,images/services/face_and_neck_de-tan.png,700
+41,Unisex,Basic Manicure,"Classic nail care including soaking, cuticle care, nail shaping, and buffing.",images/services/basic_manicure.jpeg,400
+42,Unisex,Basic Pedicure,"Classic foot care including soaking, cuticle care, nail shaping, and light scrub.",images/services/basic_pedicure_unisex.jpg,500
+43,Unisex,Ear Piercing,Safe and hygienic ear piercing with a sterilized stud.,images/services/ear_piercing_unisex.jpg,800
+44,Unisex,Olaplex Hair Treatment,"A bond-building treatment to repair and strengthen damaged, colored hair.",images/services/olaplex_hair_treatment_unisex.jpg,2500
+45,Unisex,Swedish Massage,"A classic full-body massage with long, flowing strokes to reduce stress.",images/services/swedish_massage_unisex.jpg,1700

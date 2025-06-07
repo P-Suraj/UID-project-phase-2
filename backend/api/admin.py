@@ -1,16 +1,16 @@
 from django.contrib import admin
-from .models import Service, SubService, Order, OrderItem
+from .models import Service, Category, Order, OrderItem
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ["name"]
 
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ["name"]
-
-
-@admin.register(SubService)
-class SubServiceAdmin(admin.ModelAdmin):
-    list_display = ["name", "service", "amount", "labor_rate"]
-    list_filter = ["service"]
+    list_display = ["name", "category", "price"]
+    list_filter = ["category"]
     search_fields = ["name"]
 
 
@@ -29,4 +29,4 @@ class OrderAdmin(admin.ModelAdmin):
 
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
-    list_display = ["order", "subservice", "total_cost"]
+    list_display = ["order", "service", "quantity", "total_cost"]
