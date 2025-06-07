@@ -14,7 +14,8 @@ dependencies = [
     "python-dateutil (>=2.9.0.post0,<3.0.0)",
     "python-dotenv (>=1.1.0,<2.0.0)",
     "strawberry-graphql @ git+https://github.com/strawberry-graphql/strawberry.git",
-    "dj-database-url (>=2.3.0,<3.0.0)"
+    "dj-database-url (>=2.3.0,<3.0.0)",
+    "requests (>=2.32.3,<3.0.0)"
 ]
 
 [tool.poetry]

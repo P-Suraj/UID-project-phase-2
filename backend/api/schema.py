@@ -1,28 +1,30 @@
 import strawberry
 from typing import List, Optional
-from .models import Service, SubService, Order, OrderItem
+from .models import Service, Category, Order, OrderItem
 from django.contrib.auth.models import User
+
+
+@strawberry.type
+class CategoryType:
+    id: int
+    name: str
 
 
 @strawberry.type
 class ServiceType:
     id: int
     name: str
-
-
-@strawberry.type
-class SubServiceType:
-    id: int
-    name: str
-    amount: Optional[float]
-    labor_rate: Optional[float]
-    service: ServiceType
+    description: Optional[str]
+    image_url: Optional[str]
+    price: float
+    category: CategoryType
 
 
 @strawberry.type
 class OrderItemType:
     id: int
-    subservice: SubServiceType
+    service: ServiceType
+    quantity: int
     total_cost: float
 
 
@@ -37,7 +39,7 @@ class OrderType:
 
     @strawberry.field
     def total_cost(self) -> float:
-        return self.total_cost
+        return sum(item.total_cost for item in self.items)
 
 
 # Queries
@@ -45,23 +47,15 @@ class OrderType:
 class Query:
     @strawberry.field
     def all_services(self) -> List[ServiceType]:
-        return Service.objects.all()
-
-    @strawberry.field
-    def all_subservices(self) -> List[SubServiceType]:
-        return SubService.objects.select_related("service").all()
+        return Service.objects.select_related("category").all()
 
     @strawberry.field
     def all_orders(self) -> List[OrderType]:
-        return Order.objects.select_related("subservice__service").all()
+        return Order.objects.prefetch_related("items__service__category").all()
 
     @strawberry.field
     def service_by_id(self, id: int) -> Optional[ServiceType]:
         return Service.objects.filter(pk=id).first()
-
-    @strawberry.field
-    def subservice_by_id(self, id: int) -> Optional[SubServiceType]:
-        return SubService.objects.filter(pk=id).first()
 
     @strawberry.field
     def order_by_id(self, id: int) -> Optional[OrderType]:
@@ -74,41 +68,24 @@ class Mutation:
     @strawberry.mutation
     def place_order(
         self,
+        user_id: int,
         customer_email: str,
         customer_phone: str,
         customer_address: str,
-        subservice_ids: List[int],
+        items: List[strawberry.ID],  # List of service IDs
+        quantities: List[int],
     ) -> OrderType:
+        user = User.objects.get(pk=user_id)
         order = Order.objects.create(
+            customer=user,
             customer_email=customer_email,
             customer_phone=customer_phone,
             customer_address=customer_address,
         )
-        for sid in subservice_ids:
-            sub = SubService.objects.get(pk=sid)
-            OrderItem.objects.create(order=order, subservice=sub)
+        for service_id, qty in zip(items, quantities):
+            service = Service.objects.get(pk=service_id)
+            OrderItem.objects.create(order=order, service=service, quantity=qty)
         return order
-
-    @strawberry.mutation
-    def update_order(
-        self,
-        id: int,
-        customer_email: str,
-        customer_phone: str,
-        customer_address: str,
-    ) -> OrderType:
-        order = Order.objects.get(pk=id)
-        order.customer_email = customer_email
-        order.customer_phone = customer_phone
-        order.customer_address = customer_address
-        order.save()
-        return order
-
-    @strawberry.mutation
-    def delete_order(self, id: int) -> bool:
-        order = Order.objects.get(pk=id)
-        order.delete()
-        return True
 
 
 schema = strawberry.Schema(query=Query, mutation=Mutation)
