@@ -1,6 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
-
+from django.contrib.auth.models import AbstractUser
+from django.contrib.auth import get_user_model
 
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
@@ -11,7 +11,7 @@ class Category(models.Model):
 
 class Service(models.Model):
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name="services", null=True, blank=True
+        Category, on_delete=models.SET_NULL, related_name="services", null=True, blank=True
     )
     name = models.CharField(max_length=255)
     description = models.TextField(blank=True)
@@ -21,9 +21,21 @@ class Service(models.Model):
     def __str__(self):
         return f"{self.name} ({self.category.name if self.category else 'No Category'})"
 
+class CustomUser(AbstractUser):
+    email = models.EmailField(unique=True, null=False, blank=False)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+    class Meta:
+        verbose_name = 'Custom User'
+        verbose_name_plural = 'Custom Users'
+
+    def __str__(self):
+        return self.email
 
 class Order(models.Model):
-    customer = models.ForeignKey(User, on_delete=models.CASCADE)
+    customer = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     customer_email = models.EmailField()
     customer_phone = models.CharField(max_length=15)
     customer_address = models.TextField()
@@ -39,7 +51,7 @@ class Order(models.Model):
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="items")
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, null=True, blank=True)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, null=False, blank=False)
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
@@ -47,4 +59,6 @@ class OrderItem(models.Model):
 
     @property
     def total_cost(self):
-        return self.service.price * self.quantity
+        if self.service and self.service.price is not None:
+            return self.service.price * self.quantity
+        return 0.0
