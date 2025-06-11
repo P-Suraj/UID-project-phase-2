@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ServEaze | Home Services Platform</title>
+    <style>
+        :root {
+            --primary: #A2D2FF;
+            --background: #F9FAFB;
+            --text: #1E3A8A;
+            --subtext: #6B7280;
+            --accent: #FCD34D;
+            --btn-hover: #60A5FA;
+            --card-bg: #FFFFFF;
+            --border: #E5EAF1;
+            --modal-bg: rgba(255,255,255,0.96);
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+        }
+        .navbar {
+            background: var(--primary);
+            color: var(--text);
+            padding: 20px 0 18px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--btn-hover);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .navbar:hover {
+            background: var(--btn-hover);
+            color: #fff;
+        }
+        .intro-section {
+            text-align: center;
+            margin: 50px 0 36px 0;
+            padding: 0 16px;
+        }
+        .tagline {
+            font-size: 2.3rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: 1.5px;
+            margin-bottom: 14px;
+        }
+        .intro-desc {
+            font-size: 1.15rem;
+            color: var(--subtext);
+            font-weight: 500;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+            padding: 0 16px;
+        }
+        .card-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 36px;
+            justify-content: center;
+        }
+        .card {
+            background: var(--card-bg);
+            border: 2px solid var(--border);
+            border-radius: 18px;
+            width: 240px;
+            min-height: 320px;
+            text-align: center;
+            padding: 24px 18px 18px 18px;
+            transition: box-shadow 0.15s, transform 0.12s, border-color 0.18s, background 0.18s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-shadow: 0 4px 18px 0 #a2d2ff22;
+            position: relative;
+            z-index: 1;
+        }
+        .card:hover {
+            box-shadow: 0 8px 28px 0 #60A5FA33;
+            border-color: var(--primary);
+            transform: translateY(-6px) scale(1.04);
+            background: var(--accent);
+        }
+        .card img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            background: #f3f7fb;
+            border: 1.5px solid var(--primary);
+            filter: drop-shadow(0 0 6px #A2D2FF33);
+        }
+        .card-title {
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+        /* Modal styles */
+        .modal-backdrop {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(162, 210, 255, 0.22);
+            backdrop-filter: blur(7px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-box {
+            background: var(--modal-bg);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px 0 #a2d2ff55;
+            max-width: 420px;
+            width: 96vw;
+            padding: 38px 30px 28px 30px;
+            color: var(--text);
+            border: 2.5px solid var(--primary);
+            position: relative;
+            text-align: left;
+            animation: popIn 0.23s cubic-bezier(.42,1.74,.74,.98);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.85) translateY(40px); opacity: 0;}
+            100% { transform: scale(1) translateY(0); opacity: 1;}
+        }
+        .modal-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .modal-service-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        .modal-service-box {
+            background: var(--card-bg);
+            border: 1.5px solid var(--primary);
+            border-radius: 12px;
+            color: var(--text);
+            font-size: 1.07rem;
+            font-weight: 600;
+            padding: 14px 18px;
+            min-width: 140px;
+            margin: 0;
+            box-shadow: 0 2px 8px 0 #a2d2ff22;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s, color 0.15s;
+            text-align: center;
+        }
+        .modal-service-box:hover {
+            background: var(--accent);
+            border-color: var(--btn-hover);
+            color: #b45309;
+        }
+        .close-btn {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            background: var(--primary);
+            color: var(--text);
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.18s;
+        }
+        .close-btn:hover {
+            background: var(--btn-hover);
+            color: #fff;
+        }
+        /* Blur effect for background */
+        .blurred {
+            filter: blur(7px) grayscale(0.2) brightness(0.97);
+            pointer-events: none;
+            user-select: none;
+        }
+        @media (max-width: 900px) {
+            .card-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                padding: 0 8px;
+            }
+            .modal-box {
+                padding: 24px 8px 18px 8px;
+            }
+            .modal-service-box {
+                min-width: 110px;
+                font-size: 1rem;
+                padding: 10px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" onclick="goHome()">ServEaze</div>
+    <div id="main-content">
+        <div class="intro-section">
+            <div class="tagline">Service. Sorted. Simplified.</div>
+            <div class="intro-desc">
+                One platform for all your home needs.<br>
+                Book trusted pros for furniture, appliances, grooming, and more—light, fresh, and hassle-free.
+            </div>
+        </div>
+        <div class="container">
+            <div class="card-grid">
+                <div class="card" onclick="showModal('furniture')">
+                    <img src="https://plus.unsplash.com/premium_photo-1684338795288-097525d127f0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZnVybml0dXJlfGVufDB8fDB8fHww" alt="Furniture">
+                    <div class="card-title">Furniture</div>
+                </div>
+                <div class="card" onclick="showModal('appliances')">
+                    <img src="https://images.unsplash.com/photo-1740803292374-1b167c1558b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWxlY3RyaWNhbCUyMGFwcGxpYW5jZXxlbnwwfHwwfHx8MA%3D%3D" alt="Electrical Appliances">
+                    <div class="card-title">Electrical Appliances</div>
+                </div>
+                <div class="card" onclick="goTo('men-salon')">
+                    <img src="https://images.unsplash.com/photo-1734892495858-1b80d67a585c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTh8fGhhaXJjYXJlfGVufDB8fDB8fHww" alt="Salon & Massage for Men">
+                    <div class="card-title">Salon & Massage for Men</div>
+                </div>
+                <div class="card" onclick="goTo('women-salon')">
+                    <img src="https://images.unsplash.com/photo-1581919277494-d11e63132a8b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fGhhaXJjYXJlfGVufDB8fDB8fHww" alt="Salon & Spa for Women">
+                    <div class="card-title">Salon & Spa for Women</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal (hidden by default) -->
+    <div id="modal-backdrop" class="modal-backdrop" style="display:none;">
+        <div class="modal-box" id="modal-box">
+            <button class="close-btn" onclick="hideModal()" title="Close">&times;</button>
+            <div class="modal-title" id="modal-title"></div>
+            <div class="modal-service-grid" id="modal-service-grid"></div>
+        </div>
+    </div>
+    <script>
+        // Modal data
+        const modalData = {
+            furniture: {
+                title: "Furniture Services",
+                items: [
+                    { name: "Sofa Assembly & Repair", page: "v2sofa.html" },
+                    { name: "Bed Assembly", page: "v2bed.html" },
+                    { name: "Wardrobe Installation", page: "v2wardrobe.html" },
+                    { name: "Table/Chair Repair", page: "v2tablechair.html" },
+                    { name: "Modular Kitchen Setup", page: "v2kitchen.html" },
+                    { name: "Bookshelf Installation", page: "v2bookshelf.html" }
+                ]
+            },
+            appliances: {
+                title: "Electrical Appliance Services",
+                items: [
+                    { name: "Air Conditioner (AC) Service & Repair", page: "v2ac.html" },
+                    { name: "Refrigerator Service & Repair", page: "v2refrigerator.html" },
+                    { name: "Washing Machine Service & Repair", page: "v2washingmachine.html" },
+                    { name: "Water Purifier Service & Repair", page: "v2purifier.html" },
+                    { name: "Microwave Oven Repair", page: "v2oven.html" },
+                    { name: "Geyser (Water Heater) Service", page: "v2heater.html" },
+                    { name: "Dishwasher Repair", page: "v2dishwasher.html" },
+                    { name: "Mixer/Grinder Repair", page: "v2grinder.html" },
+                    { name: "Electric Chimney Cleaning", page: "v2electricchimeny.html" }
+                ]
+            }
+        };
+
+        function goHome() {
+            window.location.href = "index.html";
+        }
+        function goTo(section) {
+            // Direct navigation for salon cards
+            if (section === "men-salon") {
+                window.location.href = "v2men.html";
+            } else if (section === "women-salon") {
+                window.location.href = "v2women.html";
+            } else {
+                alert("Navigate to: " + section + " (implement this page!)");
+            }
+        }
+
+        function showModal(type) {
+            if (!modalData[type]) return;
+            // Fill modal
+            document.getElementById('modal-title').textContent = modalData[type].title;
+            const grid = document.getElementById('modal-service-grid');
+            grid.innerHTML = '';
+            modalData[type].items.forEach(item => {
+                const box = document.createElement('div');
+                box.className = 'modal-service-box';
+                box.textContent = item.name;
+                box.onclick = function(e) {
+                    e.stopPropagation();
+                    window.location.href = item.page;
+                };
+                grid.appendChild(box);
+            });
+            // Show modal
+            document.getElementById('modal-backdrop').style.display = 'flex';
+            document.getElementById('main-content').classList.add('blurred');
+        }
+
+        function hideModal() {
+            document.getElementById('modal-backdrop').style.display = 'none';
+            document.getElementById('main-content').classList.remove('blurred');
+        }
+
+        // Optional: Close modal on backdrop click
+        document.getElementById('modal-backdrop').addEventListener('click', function(e) {
+            if (e.target === this) hideModal();
+        });
+
+        // Optional: ESC key closes modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") hideModal();
+        });
+    </script>
+</body>
+</html>

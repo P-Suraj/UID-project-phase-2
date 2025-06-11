@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Heater (Geyser) Service | ServEaze</title>
+    <style>
+        :root {
+            --primary: #A2D2FF;
+            --background: #F9FAFB;
+            --text: #1E3A8A;
+            --subtext: #6B7280;
+            --accent: #FCD34D;
+            --btn-hover: #60A5FA;
+            --card-bg: #FFFFFF;
+            --border: #E5EAF1;
+        }
+        body {
+            font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+        }
+        .navbar {
+            background: var(--primary);
+            color: var(--text);
+            padding: 20px 0 18px 0;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--btn-hover);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .navbar:hover {
+            background: var(--btn-hover);
+            color: #fff;
+        }
+        .container {
+            max-width: 950px;
+            margin: 36px auto;
+            background: var(--card-bg);
+            border-radius: 18px;
+            box-shadow: 0 4px 18px 0 #a2d2ff22;
+            padding: 36px 28px;
+        }
+        .product-details {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-bottom: 28px;
+        }
+        .product-image {
+            width: 260px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 2px 8px #a2d2ff33;
+            margin-right: 40px;
+            margin-bottom: 18px;
+            background: #f3f7fb;
+            border: 1.5px solid var(--primary);
+        }
+        .product-info {
+            flex: 1 1 240px;
+            min-width: 220px;
+        }
+        .product-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        .product-desc {
+            font-size: 1.13rem;
+            color: var(--subtext);
+            margin-bottom: 0;
+        }
+        h2 {
+            color: var(--text);
+            font-size: 1.25rem;
+            margin-top: 30px;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+        .service-list {
+            margin: 0 0 24px 0;
+            padding: 0;
+            list-style: none;
+        }
+        .service-list li {
+            background: #ECF4FB;
+            margin-bottom: 14px;
+            padding: 18px 22px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1.5px solid var(--border);
+            color: var(--text);
+            font-size: 1.08rem;
+            font-weight: 500;
+        }
+        .service-list button {
+            background: var(--primary);
+            color: var(--text);
+            border: none;
+            padding: 8px 22px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: background 0.2s, color 0.2s;
+        }
+        .service-list button:hover {
+            background: var(--btn-hover);
+            color: #fff;
+        }
+        .cart {
+            margin-top: 24px;
+            background: #F9F6ED;
+            padding: 16px;
+            border-radius: 10px;
+            border: 1.5px solid var(--accent);
+        }
+        .cart-title {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+        .cart-items {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .cart-items li {
+            margin-bottom: 8px;
+            color: var(--subtext);
+        }
+        .total {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--text);
+        }
+        .book-btn {
+            margin-top: 18px;
+            width: 100%;
+            background: var(--accent);
+            color: var(--text);
+            border: none;
+            padding: 14px 0;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        .book-btn:hover {
+            background: var(--btn-hover);
+            color: #fff;
+        }
+        @media (max-width: 900px) {
+            .container {
+                padding: 18px 6px;
+            }
+            .product-details {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .product-image {
+                margin-right: 0;
+                margin-bottom: 18px;
+                width: 100%;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar" onclick="goHome()">ServEaze</div>
+    <div class="container">
+        <div class="product-details">
+            <img src="https://plus.unsplash.com/premium_photo-1661301068444-8ac48208d017?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2F0ZXIlMjBoZWF0ZXJ8ZW58MHx8MHx8fDA%3D" alt="Water Heater Geyser" class="product-image">
+            <div class="product-info">
+                <div class="product-title">Water Heater (Geyser) Services</div>
+                <div class="product-desc">
+                    Hassle-free water heater and geyser repair, installation, and maintenance to ensure you always have hot water when you need it.
+                </div>
+            </div>
+        </div>
+        <h2>Choose a Service</h2>
+        <ul class="service-list" id="serviceList">
+            <li>
+                <span>General Maintenance</span>
+                <span>₹349</span>
+                <button onclick="addToCart('General Maintenance', 349)">Add</button>
+            </li>
+            <li>
+                <span>Heating Element Replacement</span>
+                <span>₹799</span>
+                <button onclick="addToCart('Heating Element Replacement', 799)">Add</button>
+            </li>
+            <li>
+                <span>Thermostat Repair</span>
+                <span>₹599</span>
+                <button onclick="addToCart('Thermostat Repair', 599)">Add</button>
+            </li>
+            <li>
+                <span>Installation/Uninstallation</span>
+                <span>₹499</span>
+                <button onclick="addToCart('Installation/Uninstallation', 499)">Add</button>
+            </li>
+        </ul>
+        <div class="cart" id="cartSection" style="display:none;">
+            <div class="cart-title">Your Cart</div>
+            <ul class="cart-items" id="cartItems"></ul>
+            <div class="total" id="cartTotal"></div>
+            <button onclick="clearCart()" style="margin-top:10px;background:#eb2f06;color:#fff;border-radius:6px;padding:8px 18px;border:none;cursor:pointer;">Clear Cart</button>
+        </div>
+        <button class="book-btn" onclick="bookNow()">Book</button>
+    </div>
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+        // Cart logic
+        const cart = [];
+
+        function addToCart(service, price) {
+            cart.push({service, price});
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartSection = document.getElementById('cartSection');
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+
+            if (cart.length === 0) {
+                cartSection.style.display = 'none';
+                return;
+            }
+
+            cartSection.style.display = 'block';
+            cartItems.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.service} - ₹${item.price}`;
+                cartItems.appendChild(li);
+                total += item.price;
+            });
+            cartTotal.textContent = `Total: ₹${total}`;
+        }
+
+        function clearCart() {
+            cart.length = 0;
+            renderCart();
+        }
+
+        function bookNow() {
+            // No action, as booking is handled on a different page
+        }
+    </script>
+</body>
+</html>
