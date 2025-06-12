@@ -2,180 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microwave Oven Service | ServEaze</title>
-    <style>
-        :root {
-            --primary: #A2D2FF;
-            --background: #F9FAFB;
-            --text: #1E3A8A;
-            --subtext: #6B7280;
-            --accent: #FCD34D;
-            --btn-hover: #60A5FA;
-            --card-bg: #FFFFFF;
-            --border: #E5EAF1;
-        }
-        body {
-            font-family: 'Segoe UI', 'Inter', Arial, sans-serif;
-            margin: 0;
-            background: var(--background);
-            color: var(--text);
-        }
-        .navbar {
-            background: var(--primary);
-            color: var(--text);
-            padding: 20px 0 18px 0;
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            border-bottom: 2px solid var(--btn-hover);
-            cursor: pointer;
-            user-select: none;
-            transition: background 0.2s, color 0.2s;
-        }
-        .navbar:hover {
-            background: var(--btn-hover);
-            color: #fff;
-        }
-        .container {
-            max-width: 950px;
-            margin: 36px auto;
-            background: var(--card-bg);
-            border-radius: 18px;
-            box-shadow: 0 4px 18px 0 #a2d2ff22;
-            padding: 36px 28px;
-        }
-        .product-details {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            margin-bottom: 28px;
-        }
-        .product-image {
-            width: 260px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 14px;
-            box-shadow: 0 2px 8px #a2d2ff33;
-            margin-right: 40px;
-            margin-bottom: 18px;
-            background: #f3f7fb;
-            border: 1.5px solid var(--primary);
-        }
-        .product-info {
-            flex: 1 1 240px;
-            min-width: 220px;
-        }
-        .product-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        .product-desc {
-            font-size: 1.13rem;
-            color: var(--subtext);
-            margin-bottom: 0;
-        }
-        h2 {
-            color: var(--text);
-            font-size: 1.25rem;
-            margin-top: 30px;
-            margin-bottom: 14px;
-            font-weight: 700;
-        }
-        .service-list {
-            margin: 0 0 24px 0;
-            padding: 0;
-            list-style: none;
-        }
-        .service-list li {
-            background: #ECF4FB;
-            margin-bottom: 14px;
-            padding: 18px 22px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1.5px solid var(--border);
-            color: var(--text);
-            font-size: 1.08rem;
-            font-weight: 500;
-        }
-        .service-list button {
-            background: var(--primary);
-            color: var(--text);
-            border: none;
-            padding: 8px 22px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: background 0.2s, color 0.2s;
-        }
-        .service-list button:hover {
-            background: var(--btn-hover);
-            color: #fff;
-        }
-        .cart {
-            margin-top: 24px;
-            background: #F9F6ED;
-            padding: 16px;
-            border-radius: 10px;
-            border: 1.5px solid var(--accent);
-        }
-        .cart-title {
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 10px;
-        }
-        .cart-items {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .cart-items li {
-            margin-bottom: 8px;
-            color: var(--subtext);
-        }
-        .total {
-            margin-top: 10px;
-            font-weight: bold;
-            color: var(--text);
-        }
-        .book-btn {
-            margin-top: 18px;
-            width: 100%;
-            background: var(--accent);
-            color: var(--text);
-            border: none;
-            padding: 14px 0;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s, color 0.2s;
-        }
-        .book-btn:hover {
-            background: var(--btn-hover);
-            color: #fff;
-        }
-        @media (max-width: 900px) {
-            .container {
-                padding: 18px 6px;
-            }
-            .product-details {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .product-image {
-                margin-right: 0;
-                margin-bottom: 18px;
-                width: 100%;
-                height: 180px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your shared CSS file -->
 </head>
 <body>
     <div class="navbar" onclick="goHome()">ServEaze</div>
@@ -216,20 +45,47 @@
             <div class="cart-title">Your Cart</div>
             <ul class="cart-items" id="cartItems"></ul>
             <div class="total" id="cartTotal"></div>
-            <button onclick="clearCart()" style="margin-top:10px;background:#eb2f06;color:#fff;border-radius:6px;padding:8px 18px;border:none;cursor:pointer;">Clear Cart</button>
+            <button onclick="clearCart()" class="clear-cart-btn">Clear Cart</button>
         </div>
         <button class="book-btn" onclick="bookNow()">Book</button>
     </div>
+
+    <!-- Custom Modal for Messages -->
+    <div id="message-modal-backdrop" class="modal-backdrop" style="display:none;">
+        <div class="modal-box confirmation-modal-box">
+            <button class="close-btn" onclick="hideMessageBox()">&times;</button>
+            <div class="modal-title" id="message-modal-title"></div>
+            <div id="message-content" class="confirmation-message"></div>
+            <button class="go-home-btn" onclick="hideMessageBox()" style="display:none;">OK</button>
+        </div>
+    </div>
+
     <script>
         function goHome() {
             window.location.href = "index.html";
         }
+
+        // Custom function to show a message box (replaces alert)
+        function showMessageBox(title, message) {
+            document.getElementById('message-modal-title').textContent = title;
+            document.getElementById('message-content').innerHTML = message;
+            document.getElementById('message-modal-backdrop').style.display = 'flex';
+            document.body.classList.add('blurred-background');
+        }
+
+        // Custom function to hide the message box
+        function hideMessageBox() {
+            document.getElementById('message-modal-backdrop').style.display = 'none';
+            document.body.classList.remove('blurred-background');
+        }
+
         // Cart logic
-        const cart = [];
+        let cart = [];
 
         function addToCart(service, price) {
             cart.push({service, price});
             renderCart();
+            localStorage.setItem('cart', JSON.stringify(cart));
         }
 
         function renderCart() {
@@ -255,13 +111,36 @@
         }
 
         function clearCart() {
-            cart.length = 0;
+            cart = [];
             renderCart();
+            localStorage.removeItem('cart');
+            showMessageBox('Cart Cleared', 'Your shopping cart has been cleared.');
         }
 
         function bookNow() {
-            // No action, as booking is handled on a different page
+            if (cart.length === 0) {
+                showMessageBox('Cart Empty', 'Your cart is empty. Please add items before booking.');
+                return;
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.href = 'booking.html';
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedCart = localStorage.getItem('cart');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                renderCart();
+            }
+        });
+
+        document.getElementById('message-modal-backdrop').addEventListener('click', function(e) {
+            if (e.target === this) hideMessageBox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") hideMessageBox();
+        });
     </script>
 </body>
 </html>
