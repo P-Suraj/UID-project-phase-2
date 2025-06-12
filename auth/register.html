@@ -36,8 +36,9 @@
 				<input type="email" name="email" placeholder="Enter your email" required/>
 				<input type="password" name="password" placeholder="Enter a password" required/>
 				<button type="submit"> Continue </button>
+				<p style="color: white; display:inline">Already a member? <a style="text-decoration: none; display:inline" href="login.html">Login Here!</a></p>
 
-				<a onclick="home()">
+				<a style="width: fit-content;" onclick="home()">
 					<svg viewBox="0 0 24 24" style="width: 20px; height: 20px;" stroke="currentColor" stroke-width="3">
 						<path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7-7l-7 7 7 7" />
 					</svg>
@@ -50,7 +51,7 @@
 
 	<script>
 		function home() {
-			window.location.href = '/';
+			window.location.href = '../index.html';
 		}
 
 		function handleRegister(event) {
