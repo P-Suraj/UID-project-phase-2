@@ -147,7 +147,6 @@ body {
     color: var(--accent-yellow);
 }
 
-/* Mobile Navigation (Hidden by default) */
 .nav-toggle {
     display: none;
     font-size: var(--font-size-xl);
@@ -155,29 +154,41 @@ body {
     color: var(--white);
 }
 
-.mobile-nav {
-    display: flex; /* Always display flex but control visibility with transform/opacity */
+header {
+	background-color: #1A2E44;
+	padding: 10px;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#mobile-nav {
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
-    width: 250px;
     height: 100%;
     background: var(--dark-navy);
     box-shadow: -5px 0 15px var(--shadow-strong);
     padding-top: 60px;
-    z-index: 100; /* Above main content */
+    z-index: 100;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+	padding: 10px;
+	padding-top: 50px;
     transform: translateX(100%);
     transition: transform 0.3s ease-out;
 }
 
-.mobile-nav.open {
+#mobile-nav.open {
     transform: translateX(0);
 }
 
-.mobile-nav .close-btn {
+#mobile-nav .close-btn {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -188,18 +199,18 @@ body {
     cursor: pointer;
 }
 
-.mobile-nav ul {
+#mobile-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     width: 100%;
 }
 
-.mobile-nav li {
+#mobile-nav li {
     width: 100%;
 }
 
-.mobile-nav li a {
+#mobile-nav li a {
     display: block;
     padding: 15px 30px;
     color: var(--white);
@@ -209,7 +220,7 @@ body {
     transition: background 0.2s ease, color 0.2s ease;
 }
 
-.mobile-nav li a:hover {
+#mobile-nav li a:hover {
     background: var(--primary-blue);
     color: var(--white);
 }
@@ -268,8 +279,8 @@ body {
     border: none;
     padding: 15px 35px;
     border-radius: 8px;
-    font-size: var(--font-size-lg);
-    font-weight: 700;
+    font-size: smaller;
+    font-weight: 300;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 15px var(--shadow-medium);
@@ -277,7 +288,7 @@ body {
     opacity: 0;
 }
 .cta-button:hover {
-    background-color: #e6b100; /* Darker yellow */
+    background-color: #e6b100;
     transform: translateY(-5px);
     box-shadow: 0 6px 20px var(--shadow-strong);
 }
@@ -286,7 +297,6 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* General Container for Sections */
 .container {
     max-width: 1100px;
     margin: 60px auto;
@@ -296,7 +306,6 @@ body {
     box-shadow: 0 8px 30px var(--shadow-light);
 }
 
-/* Section Headings */
 .section-heading {
     font-size: var(--font-size-2xl);
     font-weight: 800;
@@ -425,7 +434,7 @@ body {
 }
 
 /* Testimonials Section */
-.testimonials-section {
+#testimonials-section {
     background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
     color: var(--white);
     padding: 60px 30px;
@@ -437,7 +446,7 @@ body {
     overflow: hidden;
 }
 
-.testimonials-section::before {
+#testimonials-section::before {
     content: '';
     position: absolute;
     top: -20px;
@@ -448,7 +457,7 @@ body {
     border-radius: 50%;
     animation: float 6s ease-in-out infinite alternate;
 }
-.testimonials-section::after {
+#testimonials-section::after {
     content: '';
     position: absolute;
     bottom: -20px;
@@ -464,11 +473,11 @@ body {
     100% { transform: translateY(-15px); }
 }
 
-.testimonials-section .section-heading {
+#testimonials-section .section-heading {
     color: var(--white);
     margin-bottom: 50px;
 }
-.testimonials-section .section-heading::after {
+#testimonials-section .section-heading::after {
     background-color: var(--accent-yellow);
 }
 
@@ -481,31 +490,16 @@ body {
     max-width: 800px;
 }
 
-.testimonial-card {
-    flex: 0 0 100%; /* Each card takes full width */
-    width: 100%;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    box-shadow: 0 4px 20px var(--shadow-medium);
-    color: var(--dark-navy);
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.5s ease-in-out; /* For carousel animation */
-}
-
-.testimonial-card p.quote {
+.quote {
     font-size: var(--font-size-base);
     font-style: italic;
     margin-bottom: 20px;
-    color: var(--medium-gray-text);
+    color: white;
 }
 
-.testimonial-card .author {
+.author {
     font-weight: 700;
-    color: var(--primary-blue);
+    color: white;
     font-size: var(--font-size-md);
     margin-top: 10px;
 }
@@ -536,32 +530,31 @@ body {
 }
 
 
-/* Footer Styles */
-.footer {
+footer {
     background: var(--dark-navy);
     color: var(--light-gray-bg);
     text-align: center;
     padding: 40px 20px;
+	margin:auto;
     margin-top: 60px;
     border-top: 5px solid var(--primary-blue);
     font-size: var(--font-size-sm);
 }
-.footer p {
-    margin: 8px 0;
-}
-.footer .social-links a {
+
+footer .social-links a {
     color: var(--white);
     font-size: var(--font-size-lg);
     margin: 0 10px;
     transition: color 0.2s ease;
 }
-.footer .social-links a:hover {
+footer .social-links a:hover {
     color: var(--primary-blue);
 }
 .footer-nav ul {
     list-style: none;
     padding: 0;
-    margin: 15px 0 0 0;
+	margin: auto;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -578,15 +571,14 @@ body {
 }
 
 
-/* Modal Styles (General purpose for index.html and service pages) */
 .modal-backdrop {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(162, 210, 255, 0.22); /* Light transparent blue */
+    background: rgba(162, 210, 255, 0.22);
     backdrop-filter: blur(7px);
-    z-index: 1000; /* Ensure it's on top of everything */
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -728,6 +720,11 @@ h2 { /* Reusing h2 for service lists */
     flex-direction: column;
     gap: 15px;
 }
+
+.service-list > li > button {
+	max-width: fit-content;
+}
+
 .service-list li {
     background: var(--light-gray-bg);
     padding: 20px 25px;
@@ -1176,8 +1173,10 @@ h2 { /* Reusing h2 for service lists */
         padding: 15px 20px;
         font-size: var(--font-size-base);
     }
+	.service-list > li > button {
+		max-width: 100%;
+	}
     .service-list button {
-        width: 100%;
         text-align: center;
     }
     .modal-box {
@@ -1326,10 +1325,10 @@ h2 { /* Reusing h2 for service lists */
     .testimonial-card {
         padding: 20px;
     }
-    .testimonials-section .section-heading {
+    #testimonials-section .section-heading {
         font-size: var(--font-size-xl);
     }
-    .footer {
+    footer {
         padding: 20px 10px;
         font-size: 0.85rem;
     }
