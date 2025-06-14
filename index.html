@@ -1,313 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ServEaze | Your Go-To Home Services Platform</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <div id="main-content">
-		<header>
-            
-            <nav class="main-nav">
-				<div class="navbar">
-					<div class="icon-medium">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-							stroke-width="2"
-						>
-							<path stroke-linecap="round" stroke-linejoin="round" d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" />
-							<path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h.09a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
-						</svg>
-					</div>
-					<a href="index.html" class="logo">ServEaze</a>
-            	</div>
-				
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ServEaze | Your Go-To Home Services Platform</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    </head>
+    <body>
+        <div id="main-content">
+            <header>
+                <nav class="main-nav">
+                    <div class="navbar">
+                        <div class="icon-medium">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor"
+                                 stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 15.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51h.09a1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                            </svg>
+                        </div>
+                        <a href="index.html" class="logo">ServEaze</a>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="index.html" class="active">Home</a>
+                        </li>
+                        <li>
+                            <a href="#service-categories-section">Services</a>
+                        </li>
+                        <li>
+                            <a href="#how-it-works-section">How It Works</a>
+                        </li>
+                        <li>
+                            <a href="#testimonials-section">Testimonials</a>
+                        </li>
+                        <li>
+                            <a href="auth/login.html">Login</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </header>
+            <nav id="mobile-nav">
+                <button class="close-btn" id="mobileNavClose">&times;</button>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#service-categories-section">Services</a></li>
-                    <li><a href="#how-it-works-section">How It Works</a></li>
-                    <li><a href="#testimonials-section">Testimonials</a></li>
-                    <li><a href="auth/login.html">Login</a></li>
+                    <li>
+                        <a href="index.html" onclick="hideMobileNav()">Home</a>
+                    </li>
+                    <li>
+                        <a href="#service-categories-section" onclick="hideMobileNav()">Services</a>
+                    </li>
+                    <li>
+                        <a href="#how-it-works-section" onclick="hideMobileNav()">How It Works</a>
+                    </li>
+                    <li>
+                        <a href="#testimonials-section" onclick="hideMobileNav()">Testimonials</a>
+                    </li>
+                    <li>
+                        <a href="#contact-footer" onclick="hideMobileNav()">Contact</a>
+                    </li>
+                    <li>
+                        <a href="booking.html" class="cta-button mobile-cta">Book Now</a>
+                    </li>
                 </ul>
             </nav>
-            <div class="nav-toggle" id="navToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </header>
-
-        <nav id="mobile-nav">
-            <button class="close-btn" id="mobileNavClose">&times;</button>
-            <ul>
-                <li><a href="index.html" onclick="hideMobileNav()">Home</a></li>
-                <li><a href="#service-categories-section" onclick="hideMobileNav()">Services</a></li>
-                <li><a href="#how-it-works-section" onclick="hideMobileNav()">How It Works</a></li>
-                <li><a href="#testimonials-section" onclick="hideMobileNav()">Testimonials</a></li>
-                <li><a href="#contact-footer" onclick="hideMobileNav()">Contact</a></li>
-                <li><a href="booking.html" class="cta-button mobile-cta">Book Now</a></li>
-            </ul>
-        </nav>
-
-
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Your Home, Our Expertise.</h1>
-                <p>Seamless & Reliable Home Services at Your Fingertips. From Repairs to Renovations, We've Got You Covered.</p>
-                <button class="cta-button" onclick="scrollToServices()">Explore Services</button>
-            </div>
-        </section>
-
-        <section class="container" id="how-it-works-section">
-            <h2 class="section-heading">How ServEaze Works</h2>
-            <div class="how-it-works-grid">
-                <div class="work-step">
-                    <span class="step-number">1</span>
-                    <div class="step-icon"><i class="fas fa-search"></i></div>
-                    <h3>Choose Service</h3>
-                    <p>Select from our wide range of home services. Browse categories or search for specific needs.</p>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>Your Home, Our Expertise.</h1>
+                    <p>
+                        Seamless & Reliable Home Services at Your Fingertips. From Repairs
+                        to Renovations, We've Got You Covered.
+                    </p>
+                    <button class="cta-button" onclick="scrollToServices()">Explore Services</button>
                 </div>
-                <div class="work-step">
-                    <span class="step-number">2</span>
-                    <div class="step-icon"><i class="fas fa-calendar-check"></i></div>
-                    <h3>Book & Confirm</h3>
-                    <p>Add desired services to your cart, provide details, and confirm your booking. It's quick and easy!</p>
+            </section>
+            <section class="container" id="how-it-works-section">
+                <h2 class="section-heading">How ServEaze Works</h2>
+                <div class="how-it-works-grid">
+                    <div class="work-step">
+                        <span class="step-number">1</span>
+                        <div class="step-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Choose Service</h3>
+                        <p>
+                            Select from our wide range of home services. Browse categories or
+                            search for specific needs.
+                        </p>
+                    </div>
+                    <div class="work-step">
+                        <span class="step-number">2</span>
+                        <div class="step-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Book & Confirm</h3>
+                        <p>
+                            Add desired services to your cart, provide details, and confirm
+                            your booking. It's quick and easy!
+                        </p>
+                    </div>
+                    <div class="work-step">
+                        <span class="step-number">3</span>
+                        <div class="step-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Service at Your Doorstep</h3>
+                        <p>
+                            Our verified professionals will arrive at your scheduled time to
+                            deliver top-notch service.
+                        </p>
+                    </div>
                 </div>
-                <div class="work-step">
-                    <span class="step-number">3</span>
-                    <div class="step-icon"><i class="fas fa-home"></i></div>
-                    <h3>Service at Your Doorstep</h3>
-                    <p>Our verified professionals will arrive at your scheduled time to deliver top-notch service.</p>
+            </section>
+            <section class="container" id="service-categories-section">
+                <h2 class="section-heading">Our Top Services</h2>
+                <div class="category-grid">
+                    <div class="category-card" onclick="showModal('appliance')">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Appliance Repair</h3>
+                        <p>Expert fixes for AC, Fridge, Washing Machine, and more.</p>
+                    </div>
+                    <div class="category-card" onclick="showModal('carpentry')">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-chair"></i>
+                        </div>
+                        <h3>Carpentry & Furniture</h3>
+                        <p>Assembly, repair, and installation for all your furniture needs.</p>
+                    </div>
+                    <div class="category-card" onclick="showModal('salon_men')">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3>Salon & Massage (Men)</h3>
+                        <p>Grooming and relaxation services at your doorstep.</p>
+                    </div>
+                    <div class="category-card" onclick="showModal('salon_women')">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3>Salon & Spa (Women)</h3>
+                        <p>Beauty and wellness treatments in the comfort of your home.</p>
+                    </div>
+                    <div class="category-card" onclick="showModal('kitchen')">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-utensils" style="color: #74C0FC;"></i>
+                        </div>
+                        <h3>Kitchen Solutions</h3>
+                        <p>Modular kitchen setup, maintenance, and cleaning.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="container" id="service-categories-section">
-            <h2 class="section-heading">Our Top Services</h2>
-            <div class="category-grid">
-                <div class="category-card" onclick="showModal('appliance')">
-                    <div class="icon-wrapper"><i class="fas fa-tools"></i></div>
-                    <h3>Appliance Repair</h3>
-                    <p>Expert fixes for AC, Fridge, Washing Machine, and more.</p>
+            </section>
+            <section class="container" id="testimonials-section">
+                <h2 class="section-heading">What Our Customers Say</h2>
+                <div class="testimonial-carousel">
+                    <div class="testimonial-card">
+                        <p class="quote">
+                            "ServEaze made getting my AC repaired so easy! Professional
+                            service, on time, and very transparent pricing. Highly recommend!"
+                        </p>
+                        <span class="author">- Rahul Sharma</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">
+                            "I needed a new bookshelf assembled, and the carpenter from
+                            ServEaze was fantastic. Quick, efficient, and very skilled. My
+                            books finally have a home!"
+                        </p>
+                        <span class="author">- Priya Singh</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">
+                            "The home spa service was heavenly! It felt like a luxury salon
+                            experience right in my living room. I'm definitely booking again."
+                        </p>
+                        <span class="author">- Anjali Desai</span>
+                    </div>
                 </div>
-                <div class="category-card" onclick="showModal('carpentry')">
-                    <div class="icon-wrapper"><i class="fas fa-chair"></i></div>
-                    <h3>Carpentry & Furniture</h3>
-                    <p>Assembly, repair, and installation for all your furniture needs.</p>
+            </section>
+            <footer id="contact-footer">
+                <p>&copy; 2025 ServEaze. All rights reserved.</p>
+                <p>
+                    Contact Us:
+                    <a href="mailto:info@serveaze.com"
+                       style="color: var(--primary-blue);
+                              text-decoration: none">info@serveaze.com</a>
+                    | +91 12345 67890
+                </p>
+                <div class="social-links">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <div class="category-card" onclick="showModal('salon_men')">
-                    <div class="icon-wrapper"><i class="fas fa-cut"></i></div>
-                    <h3>Salon & Massage (Men)</h3>
-                    <p>Grooming and relaxation services at your doorstep.</p>
-                </div>
-                <div class="category-card" onclick="showModal('salon_women')">
-                    <div class="icon-wrapper"><i class="fas fa-spa"></i></div>
-                    <h3>Salon & Spa (Women)</h3>
-                    <p>Beauty and wellness treatments in the comfort of your home.</p>
-                </div>
-                <div class="category-card" onclick="showModal('kitchen')">
-                    <div class="icon-wrapper"><i class="fas fa-kitchen-set"></i></div>
-                    <h3>Kitchen Solutions</h3>
-                    <p>Modular kitchen setup, maintenance, and cleaning.</p>
-                </div>
-                <div class="category-card" onclick="showModal('cleaning')">
-                    <div class="icon-wrapper"><i class="fas fa-broom"></i></div>
-                    <h3>Home Cleaning</h3>
-                    <p>Deep cleaning, bathroom cleaning, and more.</p>
-                </div>
-                </div>
-        </section>
-
-        <section class="container" id="testimonials-section">
-            <h2 class="section-heading">What Our Customers Say</h2>
-            <div class="testimonial-carousel">
-                <div class="testimonial-card">
-                    <p class="quote">"ServEaze made getting my AC repaired so easy! Professional service, on time, and very transparent pricing. Highly recommend!"</p>
-                    <span class="author">- Rahul Sharma</span>
-                </div>
-                <div class="testimonial-card">
-                    <p class="quote">"I needed a new bookshelf assembled, and the carpenter from ServEaze was fantastic. Quick, efficient, and very skilled. My books finally have a home!"</p>
-                    <span class="author">- Priya Singh</span>
-                </div>
-                <div class="testimonial-card">
-                    <p class="quote">"The home spa service was heavenly! It felt like a luxury salon experience right in my living room. I'm definitely booking again."</p>
-                    <span class="author">- Anjali Desai</span>
-                </div>
-            </div>
-        </section>
-
-        <footer id="contact-footer">
-            <p>&copy; 2025 ServEaze. All rights reserved.</p>
-            <p>Contact Us: <a href="mailto:info@serveaze.com" style="color:var(--primary-blue); text-decoration:none;">info@serveaze.com</a> | +91 12345 67890</p>
-            <div class="social-links">
-                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-            <nav class="footer-nav">
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">FAQs</a></li>
-                    <li><a href="#">Careers</a></li>
-                </ul>
-            </nav>
-        </footer>
-    </div> <div id="modal-backdrop" class="modal-backdrop">
-        <div class="modal-box">
-            <button class="close-btn" onclick="hideModal()">&times;</button>
-            <div class="modal-title" id="modal-title"></div>
-            <div id="modal-service-grid" class="modal-service-grid">
-                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Terms of Service</a>
+                        </li>
+                        <li>
+                            <a href="#">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#">Careers</a>
+                        </li>
+                    </ul>
+                </nav>
+            </footer>
         </div>
-    </div>
-
-    <script>
-
-        const modalData = {
-            appliance: {
-                title: "Appliance Repair & Service",
-                items: [
-                    { name: "AC Service", page: "v2ac.html" },
-                    { name: "Refrigerator Service", page: "v2refrigerator.html" },
-                    { name: "Washing Machine Service", page: "v2washingmachine.html" },
-                    { name: "Dishwasher Service", page: "v2dishwasher.html" },
-                    { name: "Microwave Oven Service", page: "v2microwave.html" },
-                    { name: "Water Heater (Geyser) Service", page: "v2geyser.html" },
-                    { name: "Water Purifier Service", page: "v2purifier.html" },
-                    { name: "Mixer/Grinder Service", page: "v2grinder.html" },
-                    { name: "Electric Chimney Cleaning", page: "v2chimney.html" }
-                ]
+        <div id="modal-backdrop" class="modal-backdrop">
+            <div class="modal-box">
+                <button class="close-btn" onclick="hideModal()">&times;</button>
+                <div class="modal-title" id="modal-title"></div>
+                <div id="modal-service-grid" class="modal-service-grid"></div>
+            </div>
+        </div>
+        <script>
+      const modalData = {
+        appliance: {
+          title: "Appliance Repair & Service",
+          items: [
+            { name: "AC Service", page: "v2ac.html" },
+            { name: "Refrigerator Service", page: "v2refrigerator.html" },
+            { name: "Washing Machine Service", page: "v2washingmachine.html" },
+            { name: "Dishwasher Service", page: "v2dishwasher.html" },
+            { name: "Microwave Oven Service", page: "v2microwave.html" },
+            { name: "Water Heater (Geyser) Service", page: "v2geyser.html" },
+            { name: "Water Purifier Service", page: "v2purifier.html" },
+            { name: "Mixer/Grinder Service", page: "v2grinder.html" },
+            { name: "Electric Chimney Cleaning", page: "v2electricchimney.html" },
+          ],
+        },
+        carpentry: {
+          title: "Carpentry & Furniture",
+          items: [
+            { name: "Bed Assembly Service", page: "v2bed.html" },
+            {
+              name: "Bookshelf Installation & Repair",
+              page: "v2bookshelf.html",
             },
-            carpentry: {
-                title: "Carpentry & Furniture",
-                items: [
-                    { name: "Bed Assembly Service", page: "v2bed.html" },
-                    { name: "Bookshelf Installation & Repair", page: "v2bookshelf.html" },
-                    { name: "Sofa Assembly & Repair", page: "v2sofa.html" },
-                    { name: "Chair/Table Repair", page: "v2tablechair.html" },
-                    { name: "Wardrobe Assembly & Installation", page: "v2wardrobe.html" }
-                ]
+            { name: "Sofa Assembly & Repair", page: "v2sofa.html" },
+            { name: "Chair/Table Repair", page: "v2tablechair.html" },
+            {
+              name: "Wardrobe Assembly & Installation",
+              page: "v2wardrobe.html",
             },
-            salon_men: {
-                title: "Salon & Massage (Men)",
-                items: [
-                    { name: "Haircut & Styling", page: "v2men.html" }
-                ]
-            },
-            salon_women: {
-                title: "Salon & Spa (Women)",
-                items: [
-                    { name: "Haircut & Styling", page: "v2women.html" }
-                ]
-            },
-            kitchen: {
-                title: "Kitchen Solutions",
-                items: [
-                    { name: "Modular Kitchen Setup", page: "v2kitchen.html" },
-					{ name: "Kitchen Maintenance", page: "v2kitchen.html" },
-                    { name: "Chimney Cleaning", page: "v2electricchimney.html" }
-                ]
-            },
-            cleaning: {
-                title: "Home Cleaning",
-                items: [
-                    { name: "Deep Cleaning (Home)", page: "v2cleaning.html" },
-                    { name: "Bathroom Cleaning", page: "v2cleaning.html" },
-                    { name: "Sofa & Carpet Cleaning", page: "v2cleaning.html" }
-                ]
-            }
-        };
+          ],
+        },
+        salon_men: {
+          title: "Salon & Massage (Men)",
+          items: [{ name: "Haircut & Styling", page: "v2men.html" }],
+        },
+        salon_women: {
+          title: "Salon & Spa (Women)",
+          items: [{ name: "Haircut & Styling", page: "v2women.html" }],
+        },
+        kitchen: {
+          title: "Kitchen Solutions",
+          items: [
+            { name: "Modular Kitchen Setup", page: "v2kitchen.html" },
+            { name: "Kitchen Maintenance", page: "v2kitchen.html" },
+            { name: "Chimney Cleaning", page: "v2electricchimney.html" },
+          ],
+        },
+      };
 
-		function redirect() {
-			window.location.href = this.getAttribute('page');
+      function redirect() {
+        window.location.href = this.getAttribute("page");
+      }
 
-		}
+      function showModal(type) {
+        const modalBackdrop = document.getElementById("modal-backdrop");
+        const modalTitle = document.getElementById("modal-title");
+        const modalServiceGrid = document.getElementById("modal-service-grid");
+        const mainContent = document.getElementById("main-content");
 
-        function showModal(type) {
-            const modalBackdrop = document.getElementById('modal-backdrop');
-            const modalTitle = document.getElementById('modal-title');
-            const modalServiceGrid = document.getElementById('modal-service-grid');
-            const mainContent = document.getElementById('main-content');
+        if (!modalData[type]) return;
 
-            if (!modalData[type]) return;
+        modalTitle.textContent = modalData[type].title;
+        modalServiceGrid.innerHTML = "";
 
-            modalTitle.textContent = modalData[type].title;
-            modalServiceGrid.innerHTML = '';
+        modalData[type].items.forEach((item) => {
+          const box = document.createElement("div");
+          box.className = "modal-service-box";
+          box.textContent = item.name;
+          box.setAttribute("page", item.page);
+          box.addEventListener("click", redirect);
+          modalServiceGrid.appendChild(box);
+        });
 
-            modalData[type].items.forEach(item => {
-                const box = document.createElement('div');
-                box.className = 'modal-service-box';
-                box.textContent = item.name;
-				box.setAttribute('page', item.page);
-				box.addEventListener('click', redirect);
-                modalServiceGrid.appendChild(box);
+        modalBackdrop.classList.add("show");
+      }
+
+      function hideModal() {
+        document.getElementById("modal-backdrop").classList.remove("show");
+      }
+
+      document
+        .getElementById("modal-backdrop")
+        .addEventListener("click", function (e) {
+          if (e.target === this) hideModal();
+        });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") hideModal();
+      });
+
+      function scrollToServices() {
+        document
+          .getElementById("service-categories-section")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      let currentTestimonial = 0;
+      const testimonials = document.querySelectorAll(".testimonial-card");
+      const totalTestimonials = testimonials.length;
+
+      function showTestimonial(index) {
+        testimonials.forEach((card, i) => {
+          card.style.transform = `translateX(-${index * 100}%)`;
+        });
+      }
+
+      showTestimonial(currentTestimonial);
+
+      const navToggle = document.getElementById("navToggle");
+      const mobileNav = document.getElementById("mobile-nav");
+      const mobileNavClose = document.getElementById("mobileNavClose");
+
+      navToggle.addEventListener("click", () => {
+        mobileNav.classList.add("open");
+        document.body.style.overflow = "hidden";
+      });
+
+      mobileNavClose.addEventListener("click", () => {
+        mobileNav.classList.remove("open");
+        document.body.style.overflow = "";
+      });
+
+      function hideMobileNav() {
+        mobileNav.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+      document.querySelectorAll(".main-nav a").forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          if (this.hash !== "" && this.getAttribute("href").startsWith("#")) {
+            e.preventDefault();
+            document.querySelector(this.hash).scrollIntoView({
+              behavior: "smooth",
             });
-
-            modalBackdrop.classList.add('show');
-        }
-
-        function hideModal() {
-            document.getElementById('modal-backdrop').classList.remove('show');
-        }
-
-        document.getElementById('modal-backdrop').addEventListener('click', function(e) {
-            if (e.target === this) hideModal();
+          }
         });
-
-        document.addEventListener('keydown', function(e) {
-            if (e.key === "Escape") hideModal();
-        });
-
-        function scrollToServices() {
-            document.getElementById('service-categories-section').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        let currentTestimonial = 0;
-        const testimonials = document.querySelectorAll('.testimonial-card');
-        const totalTestimonials = testimonials.length;
-
-        function showTestimonial(index) {
-            testimonials.forEach((card, i) => {
-                card.style.transform = `translateX(-${index * 100}%)`;
-            });
-        }
-
-        showTestimonial(currentTestimonial);
-
-        const navToggle = document.getElementById('navToggle');
-        const mobileNav = document.getElementById('mobile-nav');
-        const mobileNavClose = document.getElementById('mobileNavClose');
-
-        navToggle.addEventListener('click', () => {
-            mobileNav.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-
-        mobileNavClose.addEventListener('click', () => {
-            mobileNav.classList.remove('open');
-            document.body.style.overflow = '';
-        });
-
-        function hideMobileNav() {
-            mobileNav.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-        document.querySelectorAll('.main-nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                if (this.hash !== "" && this.getAttribute('href').startsWith('#')) {
-                    e.preventDefault();
-                    document.querySelector(this.hash).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
+      });
+        </script>
+    </body>
 </html>
