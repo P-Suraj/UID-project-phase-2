@@ -44,6 +44,7 @@
                     </ul>
                 </nav>
                 <div class="nav-toggle" id="navToggle">
+					<a href="index.html" class="logo">ServEaze</a>
                     <i class="fas fa-bars"></i>
                 </div>
             </header>
@@ -306,9 +307,7 @@
         document.getElementById("modal-backdrop").classList.remove("show");
       }
 
-      document
-        .getElementById("modal-backdrop")
-        .addEventListener("click", function (e) {
+      document.getElementById("modal-backdrop").addEventListener("click", function (e) {
           if (e.target === this) hideModal();
         });
 
@@ -321,18 +320,6 @@
           .getElementById("service-categories-section")
           .scrollIntoView({ behavior: "smooth" });
       }
-
-      let currentTestimonial = 0;
-      const testimonials = document.querySelectorAll(".testimonial-card");
-      const totalTestimonials = testimonials.length;
-
-      function showTestimonial(index) {
-        testimonials.forEach((card, i) => {
-          card.style.transform = `translateX(-${index * 100}%)`;
-        });
-      }
-
-      showTestimonial(currentTestimonial);
 
       const navToggle = document.getElementById("navToggle");
       const mobileNav = document.getElementById("mobile-nav");

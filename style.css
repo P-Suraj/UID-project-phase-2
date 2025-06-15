@@ -1,20 +1,19 @@
-/* Color Variables - Refined for a modern, inviting palette */
+
 :root {
-    --primary-blue: #4A90E2; /* A vibrant, modern blue */
-    --secondary-blue: #70B6F0; /* Lighter blue for accents */
-    --dark-navy: #1A2E44; /* Dark blue for main text/background elements */
-    --light-gray-bg: #F0F4F8; /* A soft, clean background gray */
-    --medium-gray-text: #5A6B7C; /* Muted gray for subtext/descriptions */
+    --primary-blue: #4A90E2;
+    --secondary-blue: #70B6F0;
+    --dark-navy: #1A2E44;
+    --light-gray-bg: #F0F4F8;
+    --medium-gray-text: #5A6B7C;
     --white: #FFFFFF;
-    --accent-yellow: #FFC107; /* Bright yellow for highlights/CTAs */
-    --accent-green: #28A745; /* Green for success/positive actions */
-    --accent-red: #DC3545; /* Red for warnings/clear actions */
-    --border-light: #E0E7ED; /* Light border color */
+    --accent-yellow: #FFC107;
+    --accent-green: #28A745;
+    --accent-red: #DC3545;
+    --border-light: #E0E7ED;
     --shadow-light: rgba(0, 0, 0, 0.05);
     --shadow-medium: rgba(0, 0, 0, 0.1);
     --shadow-strong: rgba(0, 0, 0, 0.2);
 
-    /* Font sizes for consistency */
     --font-size-base: 1rem;
     --font-size-sm: 0.875rem;
     --font-size-md: 1.125rem;
@@ -43,41 +42,37 @@
 	height: calc(var(--size) * 0.5);
 }
 
-/* Base Styles */
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    font-family: 'Inter', 'Segoe UI', Arial, sans-serif; /* Inter for modern feel */
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     background-color: var(--light-gray-bg);
     color: var(--dark-navy);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+    overflow-x: hidden;
 }
 
-/* Global Content Wrapper for Blur Effect */
 #main-content {
     transition: filter 0.3s ease-in-out;
-    position: relative; /* Needed for z-index context */
-    z-index: 1; /* Ensure it's behind modals initially */
+    position: relative;
+    z-index: 1;
 }
 
 #main-content.blurred {
     filter: blur(8px) brightness(0.9) grayscale(0.2);
-    pointer-events: none; /* Disable interaction with blurred content */
+    pointer-events: none;
     user-select: none;
 }
 
-/* Accessibility for focused elements */
 *:focus {
     outline: 2px solid var(--secondary-blue);
     outline-offset: 3px;
     border-radius: 4px;
 }
 
-/* Header/Navbar */
 .header {
     background: var(--dark-navy);
     color: var(--white);
@@ -88,7 +83,7 @@ body {
     box-shadow: 0 2px 10px var(--shadow-medium);
     position: sticky;
     top: 0;
-    z-index: 50; /* Above regular content, below modals */
+    z-index: 50;
 }
 
 .logo {
@@ -225,8 +220,6 @@ nav {
     color: var(--white);
 }
 
-
-/* Hero Section */
 .hero-section {
     background: linear-gradient(rgba(26, 46, 68, 0.85), rgba(26, 46, 68, 0.85)),
                 url('https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
@@ -236,7 +229,7 @@ nav {
     position: relative;
     overflow: hidden;
     margin-bottom: 40px;
-    border-radius: 0 0 50px 50px; /* Soft bottom curve */
+    border-radius: 0 0 50px 50px;
     box-shadow: 0 5px 20px var(--shadow-strong);
     animation: fadeIn 1s ease-out;
 }
@@ -690,7 +683,7 @@ footer .social-links a:hover {
 }
 .product-info {
     flex: 1 1 300px; /* Allows flexibility but minimum width */
-    min-width: 280px;
+    /* min-width: 280px; */
 }
 .product-title {
     font-size: var(--font-size-2xl);
@@ -1190,13 +1183,12 @@ h2 { /* Reusing h2 for service lists */
         grid-template-columns: 1fr;
     }
     .step-item {
-        flex: 0 0 30%; /* More compact on smaller screens */
+        flex: 0 0 30%;
     }
     .step-connector {
-        flex: 0 0 10%; /* Smaller connector */
+        flex: 0 0 10%;
         margin: 0 -5px;
     }
-    /* If step-item takes 100% on smallest screen, adjust */
     .booking-steps.mobile-stacked .step-item {
         flex: 0 0 100%;
     }
@@ -1204,13 +1196,15 @@ h2 { /* Reusing h2 for service lists */
 
 @media (max-width: 768px) {
     .main-nav {
-        display: none; /* Hide main nav */
+        display: none;
     }
     .nav-toggle {
-        display: block; /* Show hamburger icon */
+        display: flex;
+		justify-content: space-between;
+		align-items: center;
     }
     .mobile-nav {
-        display: flex; /* Show mobile nav when toggled */
+        display: flex;
     }
 
     .hero-section {
@@ -1241,7 +1235,7 @@ h2 { /* Reusing h2 for service lists */
     .product-image {
         margin-right: 0;
         margin-bottom: 20px;
-        width: 80%; /* Adjust image width on small screens */
+        width: 80%;
         max-width: 300px;
     }
     .product-title {
@@ -1268,13 +1262,13 @@ h2 { /* Reusing h2 for service lists */
         grid-template-columns: 1fr;
     }
     .step-item {
-        flex: 0 0 45%; /* Two steps per row for small mobile */
+        flex: 0 0 45%;
         margin-bottom: 15px;
     }
     .step-connector {
-        display: none; /* Hide connector between steps on small mobile if stacking */
+        display: none;
     }
-    /* If step-item takes 100% on smallest screen, adjust */
+
     .booking-steps.mobile-stacked .step-item {
         flex: 0 0 100%;
     }
@@ -1359,7 +1353,7 @@ h2 { /* Reusing h2 for service lists */
         font-size: var(--font-size-base);
     }
     .step-item {
-        flex: 0 0 100%; /* Each step on its own row */
+        flex: 0 0 100%;
     }
     .step-connector {
         display: none;
