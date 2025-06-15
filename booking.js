@@ -1,43 +1,39 @@
-// Function to navigate back to the home page
+
 function goHome() {
     window.location.href = "index.html";
 }
 
-// Function to show a custom message box (instead of alert)
 function showMessageBox(title, message, isSuccess = true) {
     const modalBackdrop = document.getElementById('confirmation-modal-backdrop');
     const modalTitle = document.getElementById('confirmation-modal-title');
     const messageContainer = document.getElementById('confirmation-message');
     const goHomeButton = modalBackdrop.querySelector('.go-home-btn');
-    const mainContent = document.getElementById('main-content'); // Reference to the main content wrapper
+    const mainContent = document.getElementById('main-content');
 
     modalTitle.textContent = title;
     messageContainer.innerHTML = message;
 
-    // Adjust button visibility and modal styling based on success/error
     if (isSuccess) {
         goHomeButton.style.display = 'block';
-        modalTitle.style.color = 'var(--accent-green)'; // Green for success
+        modalTitle.style.color = 'var(--accent-green)';
         modalBackdrop.querySelector('.modal-box').style.borderColor = 'var(--accent-green)';
     } else {
-        goHomeButton.style.display = 'none'; // Hide "Go to Home" button for validation errors
-        modalTitle.style.color = 'var(--accent-red)'; // Red for errors
+        goHomeButton.style.display = 'none';
+        modalTitle.style.color = 'var(--accent-red)';
         modalBackdrop.querySelector('.modal-box').style.borderColor = 'var(--accent-red)';
     }
 
-    modalBackdrop.classList.add('show'); // Use class to trigger transition
-    mainContent.classList.add('blurred'); // Apply blur to the main content wrapper
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+    modalBackdrop.classList.add('show');
+    mainContent.classList.add('blurred');
+    document.body.style.overflow = 'hidden';
 }
 
-// Function to hide the custom message box
 function hideConfirmationModal() {
     document.getElementById('confirmation-modal-backdrop').classList.remove('show');
     document.getElementById('main-content').classList.remove('blurred');
-    document.body.style.overflow = ''; // Restore scrolling
+    document.body.style.overflow = '';
 }
 
-// Function to update booking steps UI
 function updateBookingSteps(currentStepId) {
     const steps = ['step-cart', 'step-details', 'step-confirm'];
     let currentStepIndex = steps.indexOf(currentStepId);
@@ -45,7 +41,7 @@ function updateBookingSteps(currentStepId) {
     steps.forEach((stepId, index) => {
         const stepElement = document.getElementById(stepId);
         const circle = stepElement.querySelector('.circle');
-        const connector = stepElement.nextElementSibling; // Get the next sibling (connector)
+        const connector = stepElement.nextElementSibling;
 
         if (index < currentStepIndex) {
             stepElement.classList.add('completed');
@@ -58,10 +54,9 @@ function updateBookingSteps(currentStepId) {
         } else {
             stepElement.classList.remove('active', 'completed');
             circle.textContent = (index + 1).toString();
-            circle.innerHTML = (index + 1).toString(); // Reset icon if present
+            circle.innerHTML = (index + 1).toString();
         }
 
-        // Handle connector active state
         if (connector && connector.classList.contains('step-connector')) {
             if (index < currentStepIndex) {
                 connector.classList.add('next-active');
@@ -74,14 +69,12 @@ function updateBookingSteps(currentStepId) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Initial step update for "Details" page
     updateBookingSteps('step-details');
 
     const bookingCartItemsContainer = document.getElementById('booking-cart-items');
     const bookingCartTotalSpan = document.getElementById('booking-cart-total');
     const bookingForm = document.getElementById('booking-form');
 
-    // Retrieve cart data from localStorage
     const cartData = localStorage.getItem('cart');
     let cart = [];
 
@@ -92,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 bookingCartItemsContainer.innerHTML = '<p class="empty-cart-message">Your cart is empty. Please go back to select services.</p>';
                 bookingCartTotalSpan.textContent = '0';
                 bookingForm.style.display = 'none';
-                updateBookingSteps('step-cart'); // Indicate cart is empty
+                updateBookingSteps('step-cart');
             } else {
                 renderBookingCart();
             }
@@ -108,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingForm.style.display = 'none';
     }
 
-    // Function to render cart items on the booking page
     function renderBookingCart() {
         bookingCartItemsContainer.innerHTML = '';
         let total = 0;
@@ -116,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
         cart.forEach(item => {
             const itemDiv = document.createElement('div');
             itemDiv.className = 'booking-cart-item';
-            // Add a span for service name and another for price for better alignment
             itemDiv.innerHTML = `<span>${item.service}</span> <span>₹${item.price}</span>`;
             bookingCartItemsContainer.appendChild(itemDiv);
             total += item.price;
@@ -125,7 +116,6 @@ document.addEventListener('DOMContentLoaded', () => {
         bookingCartTotalSpan.textContent = `${total}`;
     }
 
-    // Handle form submission
     bookingForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -166,10 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.removeItem('cart');
         bookingForm.reset();
-        updateBookingSteps('step-confirm'); // Update UI to "Confirmation" step
+        updateBookingSteps('step-confirm');
     });
 
-    // Mobile Navigation Toggle
     const navToggle = document.getElementById('navToggle');
     const mobileNav = document.getElementById('mobileNav');
     const mobileNavClose = document.getElementById('mobileNavClose');
