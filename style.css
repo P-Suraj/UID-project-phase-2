@@ -320,8 +320,6 @@ nav {
     border-radius: 2px;
 }
 
-
-/* How It Works Section */
 .how-it-works-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -374,8 +372,6 @@ nav {
     color: var(--medium-gray-text);
 }
 
-
-/* Service Categories Grid (from previous version, updated for new styles) */
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -400,33 +396,32 @@ nav {
 .category-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 25px var(--shadow-medium);
-    background: var(--primary-blue); /* Hover effect to primary color */
-    color: var(--white); /* Text color change on hover */
+    background: var(--primary-blue);
+    color: var(--white);
 }
 .category-card:hover h3,
 .category-card:hover p,
 .category-card:hover .icon-wrapper i {
-    color: var(--white); /* Ensure text and icon change color on hover */
+    color: var(--white);
 }
 .category-card .icon-wrapper {
     font-size: 3.5rem;
-    color: var(--primary-blue); /* Default icon color */
+    color: var(--primary-blue);
     margin-bottom: 10px;
-    transition: color 0.2s ease; /* Smooth transition for icon color */
+    transition: color 0.2s ease;
 }
 .category-card h3 {
     font-size: var(--font-size-lg);
     margin: 0;
-    color: var(--dark-navy); /* Default heading color */
+    color: var(--dark-navy);
     transition: color 0.2s ease;
 }
 .category-card p {
     font-size: var(--font-size-base);
-    color: var(--medium-gray-text); /* Default paragraph color */
+    color: var(--medium-gray-text);
     transition: color 0.2s ease;
 }
 
-/* Testimonials Section */
 #testimonials-section {
     background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
     color: var(--white);
@@ -476,7 +471,7 @@ nav {
 
 .testimonial-carousel {
     display: flex;
-    overflow: hidden; /* Hide extra testimonials */
+    overflow: hidden;
     position: relative;
     width: 100%;
     margin: 0 auto;
@@ -661,7 +656,6 @@ footer .social-links a:hover {
     box-shadow: 0 4px 12px var(--shadow-medium);
 }
 
-/* Service Page Specific Styles (Applied to v2*.html files) */
 .product-details {
     display: flex;
     flex-wrap: wrap;
@@ -671,19 +665,18 @@ footer .social-links a:hover {
     border-bottom: 1px solid var(--border-light);
 }
 .product-image {
-    width: 300px; /* Slightly larger image */
+    width: 300px;
     height: 220px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 5px 15px var(--shadow-medium);
     margin-right: 40px;
-    margin-bottom: 20px; /* For responsive stacking */
+    margin-bottom: 20px;
     background: var(--light-gray-bg);
     border: 2px solid var(--primary-blue);
 }
 .product-info {
-    flex: 1 1 300px; /* Allows flexibility but minimum width */
-    /* min-width: 280px; */
+    flex: 1 1 300px;
 }
 .product-title {
     font-size: var(--font-size-2xl);
@@ -697,7 +690,7 @@ footer .social-links a:hover {
     margin-bottom: 0;
 }
 
-h2 { /* Reusing h2 for service lists */
+h2 {
     font-size: var(--font-size-xl);
     text-align: center;
     color: var(--dark-navy);
@@ -738,7 +731,7 @@ h2 { /* Reusing h2 for service lists */
     box-shadow: 0 6px 15px var(--shadow-medium);
 }
 .service-list li:hover span {
-    color: var(--white); /* Ensure text stays white on hover */
+    color: var(--white);
 }
 .service-list button {
     background: var(--accent-yellow);
@@ -753,7 +746,7 @@ h2 { /* Reusing h2 for service lists */
     box-shadow: 0 2px 5px var(--shadow-light);
 }
 .service-list button:hover {
-    background: #e6b100; /* Darker yellow */
+    background: #e6b100;
     transform: translateY(-2px);
     box-shadow: 0 3px 8px var(--shadow-medium);
 }
@@ -835,10 +828,9 @@ h2 { /* Reusing h2 for service lists */
     transform: translateY(-2px);
 }
 
-/* Booking Page Specific Styles */
 .booking-container {
     max-width: 800px;
-    margin-top: 40px; /* Adjusted for better spacing after header */
+    margin-top: 40px;
     padding: 30px;
 }
 .booking-container h1 {
@@ -848,7 +840,6 @@ h2 { /* Reusing h2 for service lists */
     margin-bottom: 30px;
 }
 
-/* Booking Steps Indicator */
 .booking-steps {
     display: flex;
     justify-content: space-around;
@@ -867,7 +858,7 @@ h2 { /* Reusing h2 for service lists */
     position: relative;
     font-weight: 600;
     font-size: var(--font-size-sm);
-    flex: 1; /* Distribute space evenly */
+    flex: 1;
 }
 
 .step-item .circle {
@@ -912,16 +903,16 @@ h2 { /* Reusing h2 for service lists */
 }
 
 .step-connector {
-    flex: 1; /* Connector takes up space between steps */
+    flex: 1;
     height: 3px;
     background: var(--border-light);
-    margin: 0 -15px; /* Adjust to overlap circles slightly */
+    margin: 0 -15px;
 }
 .step-item.active + .step-connector,
 .step-item.completed + .step-connector {
     background: var(--primary-blue);
 }
-/* Ensure connector after completed step is also active color */
+
 .step-item.completed + .step-connector.next-active {
     background: var(--primary-blue);
 }
@@ -965,7 +956,7 @@ h2 { /* Reusing h2 for service lists */
     padding: 20px;
     border-radius: 10px;
     background: var(--light-gray-bg);
-    max-height: 250px; /* Allow scrolling for many items */
+    max-height: 250px;
     overflow-y: auto;
 }
 
@@ -1024,7 +1015,7 @@ h2 { /* Reusing h2 for service lists */
     background: var(--white);
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in width */
+    box-sizing: border-box;
 }
 
 .form-group input[type="text"]:focus,
@@ -1064,22 +1055,19 @@ h2 { /* Reusing h2 for service lists */
     transform: translateY(0);
 }
 
-
-/* Confirmation Modal (from previous turn, adjusted for new palette) */
-/* .modal-backdrop is already defined above for general modals */
 .confirmation-modal-box {
     max-width: 550px;
     text-align: center;
     padding: 40px 30px;
     box-shadow: 0 8px 32px var(--shadow-strong);
-    border-color: var(--accent-green); /* Default to green for success */
+    border-color: var(--accent-green);
 }
 
 .confirmation-modal-box .modal-title {
-    color: var(--accent-green); /* Green for success title */
+    color: var(--accent-green);
     margin-bottom: 25px;
     font-size: var(--font-size-xl);
-    border-bottom: none; /* Remove border for confirmation modal */
+    border-bottom: none;
     padding-bottom: 0;
 }
 
@@ -1127,7 +1115,6 @@ h2 { /* Reusing h2 for service lists */
     border: 1px dashed var(--border-light);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 1024px) {
     .container {
         margin: 40px 20px;
